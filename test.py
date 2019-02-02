@@ -1,5 +1,4 @@
 # coding: utf-8
-# Your code here!
 
 # 画像用ハッシュ
 item_images = {
