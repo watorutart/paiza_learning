@@ -6,8 +6,7 @@ list = input().rstrip().split(" ")
 check_list = []
 
 for i in range(len(list)):
-    if list[i] in check_list:
-    else :
+    if list[i] not in check_list:
         check_list.append(list[i])
 
 for i in range(len(check_list)):
