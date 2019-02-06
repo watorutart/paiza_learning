@@ -7,7 +7,6 @@ check_list = []
 
 for i in range(len(list)):
     if list[i] in check_list:
-        count = 1
     else :
         check_list.append(list[i])
 
