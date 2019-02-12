@@ -1,104 +1,104 @@
 python
 
-����
+乱数
 import random
-random.randrange(n) :0~n-1�܂ł͈̔͂Ń����_���Ȑ��l���擾
+random.randrange(n) :0~n-1までの範囲でランダムな数値を取得
 
-����
-line = input()�@��line�͕����^��
-line = int(input()) ��line��int�^��
+入力
+line = input()　→lineは文字型に
+line = int(input()) →lineをint型に
 
-�����s����
-line = input().rstrip() ��input�œ��͓ǂݍ��݁Arstrip�ŉ��s�R�[�h�̏���
+複数行入力
+line = input().rstrip() →inputで入力読み込み、rstripで改行コードの処理
 
-�X�y�[�X��؂�̓��͂�int�^�Ŏ󂯎�胊�X�g�Ɋi�[
+スペース区切りの入力をint型で受け取りリストに格納
 a = list(map(int, input().split(" ")))
 
 
-���[�v
-�Ewhile�̏ꍇ
-while ������:
-	���[�v����
+ループ
+・whileの場合
+while 条件式:
+	ループ処理
 
-�Efor�̏ꍇ
-for �J�E���^�ϐ� in �J��Ԃ��͈�:
-	���[�v����
+・forの場合
+for カウンタ変数 in 繰り返す範囲:
+	ループ処理
 ---
-���[�v�����ǂ����̓C���f���g�̗L���Ō��肳���
+ループ内かどうかはインデントの有無で決定される
 for i in range(n):
-	print(i)	#�����[�v��
-print("end")		#�����[�v�O
+	print(i)	#←ループ内
+print("end")		#←ループ外
 ---
 for i in range(10):
 	print(i)
 ---
-���̏ꍇ�̏o�͂�0~9
+この場合の出力は0~9
 ---
 for i in range(1,10):
 	print(i)
 ---
-���̏ꍇ��1~9
-range�̊��ʓ���10�͏I������
-���̏ꍇ�A���[�v�𔲂������i�̒l��9
+この場合は1~9
+rangeの括弧内の10は終了条件
+この場合、ループを抜けた後のiの値は9
 
-���X�g
-len(list) :list�̃f�[�^�̌���Ԃ�
+リスト
+len(list) :listのデータの個数を返す
 ---
-player_1 = "��m"
+player_1 = "戦士"
 
 
-team = ["�E��","���@�g��",100,player_1]
+team = ["勇者","魔法使い",100,player_1]
 
 print(team)
 ---
-��̃R�[�h�̏o�́F
-['�E��', '���@�g��', 100, '��m']
+上のコードの出力：
+['勇者', '魔法使い', 100, '戦士']
 ---
-�v�f�̒ǉ�
-append���g�p
-�ǉ������v�f�͖����ɒǉ������
-list.append(�ǉ��������v�f)
+要素の追加
+appendを使用
+追加した要素は末尾に追加される
+list.append(追加したい要素)
 
-�v�f�̍폜
-pop���g�p
-list.pop(�폜�������v�f�ԍ�)
+要素の削除
+popを使用
+list.pop(削除したい要素番号)
 
-���[�v�Ń��X�g�̗v�f����ʕ\��
+ループでリストの要素を画面表示
 for i in list:
 	print(list)
-��̃R�[�h�ł́Ai��list���̗v�f�����X�ɑ�������B
-�Ⴆ�΁A��̃R�[�h��list�̒��g��["a",100,"c",200]�Ȃ�
-�o�͂�
+上のコードでは、iにlist内の要素が順々に代入される。
+例えば、上のコードでlistの中身が["a",100,"c",200]なら
+出力は
 a
 100
 c
 200
-�ƂȂ�B
+となる。
 
-team = ["�E��","��m","���@�g��"]
+team = ["勇者","戦士","魔法使い"]
 for (i,person) in enumerate(team):
     
-	print(str(i+1)+"�Ԗڂ�"+person+"���A�X���C���Ɛ����")
+	print(str(i+1)+"番目の"+person+"が、スライムと戦った")
 
-�o�͌���:
-1�Ԗڂ̗E�҂��A�X���C���Ɛ����
-2�Ԗڂ̐�m���A�X���C���Ɛ����
-3�Ԗڂ̖��@�g�����A�X���C���Ɛ����
+出力結果:
+1番目の勇者が、スライムと戦った
+2番目の戦士が、スライムと戦った
+3番目の魔法使いが、スライムと戦った
 
-�J���}��؂����
+カンマ区切り入力
 line = input().rstrip().split(",")
-line�̓��X�g�ɂȂ�A�J���}�ŋ�؂�ꂽ�v�f����������
+lineはリストになり、カンマで区切られた要素が代入される
 
-split�͊��ʓ��̕����̏��ŋ�؂�Ƃ��������ł���A���͈ȊO�ł����p�ł���
-�Ⴆ��
+splitは括弧内の文字の所で区切るという処理であり、入力以外でも活用できる
+例えば
 str = "In the distance, that day, when the star become music..."
 list = str.split(" ")
 print(list)
-�̏ꍇ�A�o�͌��ʂ�
+の場合、出力結果は
 ['In', 'the', 'distance,', 'that', 'day,', 'when', 'the', 'star', 'become', 'music...']
-�ƂȂ�
+となる
 
-�����s�f�[�^�̓ǂݍ���
+複数行データの読み込み
 import sys
 
 for line in sys.stdin.readlines():
@@ -107,110 +107,119 @@ for line in sys.stdin.readlines():
 
 
 ---
-����
-�܂Ƃ܂����f�[�^���e�L�X�g�i�L�[�j�ň���
-���X�g�͗v�f�ԍ��ŗv�f�����������A�����̓e�L�X�g�i�L�[�j�ŗv�f������
-��)
-dict["�{�X"] = "�h���S��"
-dict["���X�{�X"] = "����"
+辞書
+まとまったデータをテキスト（キー）で扱う
+リストは要素番号で要素を示したが、辞書はテキスト（キー）で要素を示す
+例)
+dict["ボス"] = "ドラゴン"
+dict["ラスボス"] = "魔王"
 
-�����̒�`�Əo��
-enemyDict = {"�U�R":"�X���C��","���{�X":"�h���S��","���X�{�X":"����"}
+辞書の定義と出力
+enemyDict = {"ザコ":"スライム","中ボス":"ドラゴン","ラスボス":"魔王"}
 
 print(enemyDict)
 
-�o�͌��ʁF
-{'�U�R': '�X���C��', '���{�X': '�h���S��', '���X�{�X': '����'}
-����`�������Ԃŏo�͂����킯�ł͂Ȃ��炵��
-�@�������Ȃ邱�Ƃ�
-�@{ '���{�X': '�h���S��', '���X�{�X': '����','�U�R': '�X���C��'}
+出力結果：
+{'ザコ': 'スライム', '中ボス': 'ドラゴン', 'ラスボス': '魔王'}
+※定義した順番で出力されるわけではないらしい
+　↓こうなることも
+　{ '中ボス': 'ドラゴン', 'ラスボス': '魔王','ザコ': 'スライム'}
 ---
-�����̗v�f�̍폜
-del dict[�v�f��]
+辞書の要素の削除
+del dict[要素名]
 
-�����̃��[�v����
+辞書のループ処理
 for rank in enemies:
 
-    print(enemies[rank] + "���A�����ꂽ�I")
+    print(enemies[rank] + "が、あらわれた！")
 
-�o�͌��ʁF
-�X���C�����A�����ꂽ�I
-�h���S�����A�����ꂽ�I
-�������A�����ꂽ�I
+出力結果：
+スライムが、あらわれた！
+ドラゴンが、あらわれた！
+魔王が、あらわれた！
 ---
 for (rank,enemy) in enemies.items():
 
-    print(rank + "��" + enemy + "���A�����ꂽ�I")
+    print(rank + "の" + enemy + "が、あらわれた！")
 
-�o�͌��ʁF
-�U�R�̃X���C�����A�����ꂽ�I
-���{�X�̃h���S�����A�����ꂽ�I
-���X�{�X�̖������A�����ꂽ�I
+出力結果：
+ザコのスライムが、あらわれた！
+中ボスのドラゴンが、あらわれた！
+ラスボスの魔王が、あらわれた！
 ---
-���X�g�̐���
-weapons = ["�C�[�W�X�\�[�h","�E�B���h�X�s�A","�A�[�X�u���C�J�[","�C�i�Y�}�n���}�["]
+リストの整列
+weapons = ["イージスソード","ウィンドスピア","アースブレイカー","イナズマハンマー"]
 
 print(weapons)
 
 
-print(sorted(weapons))			#�܏\����
-print(sorted(weapons,reverse = True))	#�܏\�����̋t	
+print(sorted(weapons))			#五十音順
+print(sorted(weapons,reverse = True))	#五十音順の逆	
 
-�o�͌��ʁF
-['�C�[�W�X�\�[�h', '�E�B���h�X�s�A', '�A�[�X�u���C�J�[', '�C�i�Y�}�n���}�[']
-['�A�[�X�u���C�J�[', '�C�i�Y�}�n���}�[', '�C�[�W�X�\�[�h', '�E�B���h�X�s�A']
-['�E�B���h�X�s�A', '�C�[�W�X�\�[�h', '�C�i�Y�}�n���}�[', '�A�[�X�u���C�J�[']
+出力結果：
+['イージスソード', 'ウィンドスピア', 'アースブレイカー', 'イナズマハンマー']
+['アースブレイカー', 'イナズマハンマー', 'イージスソード', 'ウィンドスピア']
+['ウィンドスピア', 'イージスソード', 'イナズマハンマー', 'アースブレイカー']
 
-weapons2 = ["4.�C�[�W�X�\�[�h","1.�E�B���h�X�s�A","3.�A�[�X�u���C�J�[","2.�C�i�Y�}�n���}�["]
+weapons2 = ["4.イージスソード","1.ウィンドスピア","3.アースブレイカー","2.イナズマハンマー"]
 
 print(sorted(weapons2))
 
-�o�͌��ʁF
-['1.�E�B���h�X�s�A', '2.�C�i�Y�}�n���}�[', '3.�A�[�X�u���C�J�[', '4.�C�[�W�X�\�[�h']
+出力結果：
+['1.ウィンドスピア', '2.イナズマハンマー', '3.アースブレイカー', '4.イージスソード']
 
-�����R�[�h���ɐ��񂷂邽�߁A������������Ɠǂ݉����͍l������Ȃ�
+文字コード順に整列するため、漢字が混ざると読み仮名は考慮されない
 
 ---
-���������X�g
-=�������z��
+多次元リスト
+=多次元配列
 
-��j
-team_a = ["�E��","��m","���@�g��"]
+例）
+team_a = ["勇者","戦士","魔法使い"]
 
-team_b=["����","�E��","���l"]
+team_b=["盗賊","忍者","商人"]
 
-team_c=["�X���C��","�h���S��","����"]
+team_c=["スライム","ドラゴン","魔王"]
 
 teams = [team_a,team_b,team_c]
 
 print(teams)
 
-�o�͌��ʁF
-[['�E��', '��m', '���@�g��'], ['����', '�E��', '���l'], ['�X���C��', '�h���S��', '����']]
+出力結果：
+[['勇者', '戦士', '魔法使い'], ['盗賊', '忍者', '商人'], ['スライム', 'ドラゴン', '魔王']]
 
-teams = [['�E��', '��m', '���@�g��'], ['����', '�E��', '���l'], ['�X���C��', '�h���S��', '����']]
+teams = [['勇者', '戦士', '魔法使い'], ['盗賊', '忍者', '商人'], ['スライム', 'ドラゴン', '魔王']]
 
 
 print(teams)
 
-�o�͌��ʂ͏�Ɠ���
+出力結果は上と同じ
 
-teams = [["�E��","��m"],
-	 ["����","�E��","���l"]
-,
-	 ["�X���C��","�h���S��","����"],
+teams = [["勇者","戦士"],
+	 ["盗賊","忍者","商人"],
+	 ["スライム","ドラゴン","魔王"],
+	 ["魔法使い"]]
+len(teams)    …　teamsの要素数を取得（この場合は４）
+len(teams[0]) …　teams[0]の要素数を取得（この場合は２）
 
-	 ["���@�g��"]]
-len(teams)    �c�@teams�̗v�f�����擾�i���̏ꍇ�͂S�j
-len(teams[0]) �c�@teams[0]�̗v�f�����擾�i���̏ꍇ�͂Q�j
-
-append,del�����ʂ̃��X�g�̎��Ɠ��l�̎g����
+append,delも普通のリストの時と同様の使い方
 
 numbers = [1 for i in range(10)]
 
 print(numbers)
-�o�͌��ʁF
+出力結果：
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
+---
+if 条件式:
+	処理内容
+elif 条件式:
+	処理内容
+else:
+	処理内容
 
+&& →　and
+|| →　or
 
+if a==1 or b==2:	a=1またはb=2なら
+if a==1 and b==2:	a=1かつb=2なら
