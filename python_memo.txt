@@ -227,3 +227,34 @@ if a==1 and b==2:	a=1かつb=2なら
 関数の定義方法
 def 関数名():
 	処理
+	
+変数のスコープ
+pythonではローカル変数とグローバル変数がある
+通常関数内ではグローバル変数の参照のみが許可されていて、変更はできない
+関数内でグローバル変数と同じ名前の変数を作るとグローバル変数と異なる別のローカル変数として処理される
+変更する場合は関数内で変数の前に「global」を付けて宣言する
+
+message = "paiza"
+a = 10
+b = 20
+
+# スコープを理解する
+def sum(x,y):
+    a = 3
+    global message
+    message += "paiza"
+    print(message)
+    print("hello " + str(a))
+    return x + y
+    
+num = sum(a,b)
+print(num)
+print("hello " + str(a))
+-----
+出力結果：
+paizapaiza
+hello 3
+30
+hello 10
+
+上のコードから「global message」の行をコメントアウトするとエラーになる
