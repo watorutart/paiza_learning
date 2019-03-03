@@ -282,3 +282,34 @@ introduce("こんにちは", "勇者")
 introduce("こんにちは")
 ---
 関数を呼び出す際にデフォルト値を使っているかがわからなくなるため、エラーが出る
+
+可変長引数
+def introduce(greeting, *names):
+    for name in names:
+        print("私は" + name + "です。" + greeting)
+
+introduce("こんにちは", "勇者", "村人", "兵士")
+---
+出力結果：
+私は勇者です。こんにちは
+私は村人です。こんにちは
+私は兵士です。こんにちは
+
+キーワード引数
+引数を指定して値を代入できる。また指定していない引数にはデフォルト値が入る
+
+def say_hello(greeting = "hello", target = "world"):
+    print(greeting + " " + target)
+
+say_hello("good morning!")
+say_hello(greeting = "こんにちは", target = "みなさん")
+say_hello(target = "ネコ先生", greeting = "おはようございます")
+say_hello(target = "ネコ先生")
+say_hello(greeting = "おはよう")
+---
+出力結果：
+good morning! world
+こんにちは みなさん
+おはようございます ネコ先生
+hello ネコ先生
+おはよう world
