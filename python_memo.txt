@@ -313,3 +313,18 @@ good morning! world
 おはようございます ネコ先生
 hello ネコ先生
 おはよう world
+
+クラスの定義
+#クラスの作成
+class Player:
+　　#メソッドの作成
+    def walk(self):
+        print("勇者は荒野を歩いていた")
+    
+    def attack(self, enemy):
+        print("勇者は"+enemy + "を攻撃")
+        
+player1 = Player()
+#メソッド呼び出し
+player1.walk()
+player1.attack("スライム")
