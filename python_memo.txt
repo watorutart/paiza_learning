@@ -328,3 +328,12 @@ player1 = Player()
 #メソッド呼び出し
 player1.walk()
 player1.attack("スライム")
+
+コンストラクタの定義
+class Player:
+    def __init__(self, job):
+        #self.(変数名)をインスタンス変数と呼ぶ
+        self.job = job
+	
+クラス内のコンストラクタとメソッドを呼ぶ際には第1引数に呼び出したオブジェクトが入る
+そのためコンストラクタとメソッドの第1引数にselfが必要
