@@ -337,3 +337,19 @@ class Player:
 	
 クラス内のコンストラクタとメソッドを呼ぶ際には第1引数に呼び出したオブジェクトが入る
 そのためコンストラクタとメソッドの第1引数にselfが必要
+
+クラス変数と返り値のあるメソッド
+クラス変数はクラス内で使える変数のこと。以下のように使用する
+
+class Item:
+    #クラス変数
+    tax = 1.08
+    def __init__(self, price, quantity):
+        self.price = price
+        self.quantity = quantity
+        
+    def total(self):
+        return int(self.price * self.quantity * Item.tax)
+        
+apple= Item(120, 15)
+print("合計金額は"+str(apple.total())+"円です")
