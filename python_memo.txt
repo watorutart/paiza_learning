@@ -353,3 +353,17 @@ class Item:
         
 apple= Item(120, 15)
 print("合計金額は"+str(apple.total())+"円です")
+
+文字列のメソッド
+capitalize()　→ 文字列の先頭を大文字、それ以外を小文字にするメソッド
+upper() → 文字列をすべて大文字にするメソッド
+
+text = "pYthon"
+print(text)
+print(text.capitalize())
+print(text.upper())
+---
+出力結果：
+pYthon
+Python
+PYTHON
