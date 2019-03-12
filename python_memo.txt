@@ -441,3 +441,10 @@ except 処理する例外の名前 as e:
     例外処理
 finally:
     例外発生の有無に関わらず実行される処理
+
+---
+import traceback, sys
+    sys.stderr.write(traceback.format_exc())
+   
+traceback.format_exc()で例外の詳細な文字列を取得
+sys.stderr.writeで標準エラー出力
