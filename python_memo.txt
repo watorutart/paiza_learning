@@ -2,12 +2,31 @@ python
 
 コメントアウト
 「#」で以降行末までコメント
-「"""」で囲んだ部分がコメント
+「"""」または「'''」で囲んだ部分がコメント
+「"""」、「'''」を使う場合前の行のインデントに合わせないとエラーになる
+「#」の場合はインデントを気にする必要はない
 
 #　ここがコメント
 """
 この中がコメント
 """
+
+a = 1
+if a == 1:
+    print(a)
+"""
+このようにコメントを書くとエラーになる
+"""
+    print(a)
+
+a = 1
+if a == 1:
+    print(a)
+    """
+    このようにコメントを書くとエラーが消える
+    """
+    print(a)
+
 
 乱数
 import random
@@ -475,3 +494,35 @@ finally:
 4
 
 出力結果を見るとraiseのExceptionの引数に指定しているものがエラーメッセージに入っていることがわかる
+
+メソッド内の例外
+メソッド内で例外が生じると自動的に呼び出し元へその例外が投げられる
+またraiseを使って明示的に呼び出し元へ例外を投げることができる
+
+def test_exception(number):
+    print(2)
+    try:
+        print(3)
+        answer = 100 / number
+        return answer
+        print(4)
+    except ZeroDivisionError as e:
+        print(5)
+        raise e
+    print(6)
+
+print(1)
+try:
+    answer = test_exception(0)
+    print(7)
+except ZeroDivisionError as e:
+    print(8)
+    print(e)
+---
+出力結果：
+1
+2
+3
+5
+8
+division by zero
