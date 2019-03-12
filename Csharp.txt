@@ -1,0 +1,12 @@
+C#
+
+基本形
+using System;
+public class Program{
+    public static void Main(){
+        Console.WriteLine("hello world");
+    }
+}
+
+Console.WriteLine = ＪａｖａのSystem.out.println
+Console.Write = ＪａｖａのSystem.out.printf
