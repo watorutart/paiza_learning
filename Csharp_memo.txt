@@ -10,3 +10,10 @@ public class Program{
 
 Console.WriteLine = ＪａｖａのSystem.out.println
 Console.Write = ＪａｖａのSystem.out.printf
+
+乱数の取得
+var random = new Random();
+var number = random.Next(x, y);
+
+x,yは数値とする
+上のコードでnumberに x 以上、y 未満の数値が代入される
