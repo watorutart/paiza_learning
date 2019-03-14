@@ -69,6 +69,12 @@ for i in range(1,10):
 rangeの括弧内の10は終了条件
 この場合、ループを抜けた後のiの値は9
 
+rangeについて
+range([start], stop[, step])
+start：開始（省略すると０）
+stop：終了
+step：ステップ数（省略すると１）
+
 リスト
 len(list) :listのデータの個数を返す
 ---
